@@ -2,7 +2,7 @@ package com.boundless.ftms;
 import java.util.ArrayList;
 // need to keep track of new workers, need to be added to database!
 // getters and setters depending on sprint youre working on add what is needed.
-public class worker extends user {
+public class Worker extends User {
     private static ArrayList<WorkOrder> workOrderlist;
     private String name;
     private String email;
@@ -13,7 +13,7 @@ public class worker extends user {
     private enum Type { Welder, Supervisor}
 
 
-    public worker(String name, String contactInfo){
+    public Worker(String name, String contactInfo){
         this.name = name;
         this.email = contactInfo;
         workOrderlist = new ArrayList<WorkOrder>(3);

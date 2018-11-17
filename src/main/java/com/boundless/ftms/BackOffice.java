@@ -1,4 +1,4 @@
 package com.boundless.ftms;
 
-public class backOffice extends user {
+public class BackOffice extends User {
 }
