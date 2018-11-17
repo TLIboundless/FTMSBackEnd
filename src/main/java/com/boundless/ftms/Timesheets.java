@@ -15,75 +15,23 @@ public class Timesheets {
     @Column(name = "timesheet_id")
     private String name;
 
-    @Column(name = "start_time")
-    private Timestamp startTime = null;
-
-    @Column(name = "end_time")
-    private Timestamp endTime = null;
-
-    @Column(name = "duration")
-    private int duration; // in minutes
-
     @Column(name = "worker_id")
     private int workerID;
 
     @Column(name = "job_id")
     private int jobID;
 
-    public Timesheets() {
-    }
+    @Column(name = "time_submitted")
+    private Timestamp timeSumbitted = null;
 
-    public Timesheets(int duration, int workerID, int jobID) {
-        this.duration = duration;
-        this.workerID = workerID;
-        this.jobID = jobID;
-    }
+    @Column(name = "approval_status")
+    private String approvalStatus;
 
-    public String getName() {
-        return name;
-    }
+    @Column(name = "rejection_reason")
+    private String rejectionReason;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Column(name = "time_approved")
+    private Timestamp timeApproved = null;
 
-    public void setStartTime(Timestamp startTime) {
-        this.startTime = startTime;
-    }
 
-    public void setEndTime(Timestamp endTime) {
-        this.endTime = endTime;
-    }
-
-    public void setWorkerID(int workerID) {
-        this.workerID = workerID;
-    }
-
-    public void setJobID(int jobID) {
-        this.jobID = jobID;
-    }
-
-    public Timestamp getStartTime() {
-        return startTime;
-    }
-
-    public Timestamp getEndTime() {
-        return endTime;
-    }
-
-    public int getWorkerID() {
-        return workerID;
-    }
-
-    public int getJobID() {
-        return jobID;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
 }
