@@ -1,4 +1,6 @@
-package com.boundless.ftms;
+package com.boundless.ftms.resource;
+
+import com.boundless.ftms.model.Task;
 
 import java.sql.*;
 

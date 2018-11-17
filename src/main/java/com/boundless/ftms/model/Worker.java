@@ -1,4 +1,4 @@
-package com.boundless.ftms;
+package com.boundless.ftms.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.Id;
 // need to keep track of new workers, need to be added to database!
 // getters and setters depending on sprint youre working on add what is needed.
 @Entity
-public class Worker extends User {
+public class Worker {
     @Id
     @GeneratedValue
     @Column(name = "lastName")
