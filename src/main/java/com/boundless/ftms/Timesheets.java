@@ -13,5 +13,13 @@ public class Timesheets {
     @Column(name = "timesheet_id")
     private String name;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
 }
