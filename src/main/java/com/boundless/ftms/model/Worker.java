@@ -18,8 +18,6 @@ public class Worker {
     private String firstName;
     @Column(name = "email")
     private String email;
-    @Column(name = "employeeID")
-    private String workerID;
     @Column(name = "type")
     private Type workerType;
 
@@ -47,14 +45,6 @@ public class Worker {
         this.email = email;
     }
 
-    public String getWorkerID() {
-        return workerID;
-    }
-
-    public void setWorkerID(String workerID) {
-        this.workerID = workerID;
-    }
-
     public Type getWorkerType() {
         return workerType;
     }
@@ -75,7 +65,6 @@ public class Worker {
     public Worker(String firstName, String lastName, String workerID, Type workerType, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.workerID = workerID;
         this.workerType = workerType;
         this.email = email;
 
