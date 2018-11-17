@@ -18,4 +18,10 @@ public class MainController {
     private List<Task> getAll() {
         return taskRepository.findAll();
     }
+
+    @PostMapping(value = "/insert")
+    public List<Task> saveToDatabase(@RequestBody final Task task){
+        taskRepository.save(task);
+        return taskRepository.findAll();
+    }
 }
