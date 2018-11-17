@@ -21,6 +21,9 @@ public class Timesheets {
     @Column(name = "end_time")
     private Timestamp endTime = null;
 
+    @Column(name = "duration")
+    private int duration; // in minutes
+
     @Column(name = "worker_id")
     private int workerID;
 
@@ -28,6 +31,12 @@ public class Timesheets {
     private int jobID;
 
     public Timesheets() {
+    }
+
+    public Timesheets(int duration, int workerID, int jobID) {
+        this.duration = duration;
+        this.workerID = workerID;
+        this.jobID = jobID;
     }
 
     public String getName() {
@@ -68,5 +77,13 @@ public class Timesheets {
 
     public int getJobID() {
         return jobID;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public int getDuration() {
+        return duration;
     }
 }
