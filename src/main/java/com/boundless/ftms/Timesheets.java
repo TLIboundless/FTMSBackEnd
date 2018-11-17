@@ -35,5 +35,35 @@ public class Timesheets {
         this.name = name;
     }
 
+    public void setStartTime(Timestamp startTime) {
+        this.startTime = startTime;
+    }
 
+    public void setEndTime(Timestamp endTime) {
+        this.endTime = endTime;
+    }
+
+    public void setWorkerID(int workerID) {
+        this.workerID = workerID;
+    }
+
+    public void setJobID(int jobID) {
+        this.jobID = jobID;
+    }
+
+    public Timestamp getStartTime() {
+        return startTime;
+    }
+
+    public Timestamp getEndTime() {
+        return endTime;
+    }
+
+    public int getWorkerID() {
+        return workerID;
+    }
+
+    public int getJobID() {
+        return jobID;
+    }
 }
