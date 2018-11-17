@@ -13,7 +13,7 @@ public class Timesheets {
     @Id
     @GeneratedValue
     @Column(name = "timesheet_id")
-    private String name;
+    private String timesheetID;
 
     @Column(name = "worker_id")
     private int workerID;
@@ -33,8 +33,11 @@ public class Timesheets {
     @Column(name = "time_approved")
     private Timestamp timeApproved = null;
 
-    public String getName() {
-        return name;
+    public Timesheets() {
+    }
+
+    public String getTimesheetID() {
+        return timesheetID;
     }
 
     public int getWorkerID() {
@@ -61,8 +64,8 @@ public class Timesheets {
         return timeApproved;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTimesheetID(String timesheetID) {
+        this.timesheetID = timesheetID;
     }
 
     public void setWorkerID(int workerID) {
