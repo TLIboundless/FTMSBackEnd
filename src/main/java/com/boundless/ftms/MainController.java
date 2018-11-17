@@ -15,7 +15,7 @@ public class MainController {
     TaskRepository taskRepository;
 
     @GetMapping(value = "/all")
-    private List<task> getAll() {
+    private List<Task> getAll() {
         return taskRepository.findAll();
     }
 }
