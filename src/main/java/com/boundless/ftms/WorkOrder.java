@@ -1,20 +1,31 @@
 package com.boundless.ftms;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class WorkOrder {
     static List<String> allSkills = new ArrayList<String>();
     // when database and backend are connected, take from the database
     static List<String> workSites = new ArrayList<String>();
     // when database and backend are connected, take from the database
 
+    @Id
+    @GeneratedValue
+    @Column(name = "skills")
     private List<String> skills = new ArrayList<String>();
 
+    @Column(name = "location")
     private String location;
 
+    @Column(name = "deadline")
     private String deadline;
 
+    @Column(name = "description")
     private String description;
 
     public WorkOrder(ArrayList<String> skills, String location, String deadline, String description) {
@@ -54,5 +65,20 @@ public class WorkOrder {
         return workSites;
     }
 
+    public List<String> getSkills() {
+        return skills;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getDeadline() {
+        return deadline;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 
 }
