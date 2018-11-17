@@ -1,8 +1,9 @@
-package com.boundless.ftms;
+package com.boundless.ftms.resource;
 
 import java.util.List;
 
-import com.boundless.ftms.TaskRepository;
+import com.boundless.ftms.model.Task;
+import com.boundless.ftms.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

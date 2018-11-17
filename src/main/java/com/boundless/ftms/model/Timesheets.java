@@ -1,4 +1,4 @@
-package com.boundless.ftms;
+package com.boundless.ftms.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
