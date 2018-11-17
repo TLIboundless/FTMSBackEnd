@@ -27,6 +27,9 @@ public class Timesheets {
     @Column(name = "job_id")
     private int jobID;
 
+    public Timesheets() {
+    }
+
     public String getName() {
         return name;
     }
