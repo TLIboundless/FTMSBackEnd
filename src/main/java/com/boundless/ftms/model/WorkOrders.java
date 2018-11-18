@@ -18,7 +18,7 @@ public class WorkOrders {
     private int id;
 
     @Column(name = "client_id")
-    private int clientId;
+    private int client_id;
 
     @Column(name = "deadline")
     private Timestamp deadline;
@@ -37,9 +37,9 @@ public class WorkOrders {
 
     public WorkOrders() {}
 
-    public WorkOrders(int clientId, Timestamp deadline, boolean completed, String location, String skills,
+    public WorkOrders(int client_id, Timestamp deadline, boolean completed, String location, String skills,
                       String description) {
-        this.clientId = clientId;
+        this.client_id = client_id;
         this.deadline = deadline;
         this.completed = completed;
         this.location = location;
@@ -55,12 +55,12 @@ public class WorkOrders {
         this.id = id;
     }
 
-    public int getClientId() {
-        return clientId;
+    public int getClient_id() {
+        return client_id;
     }
 
-    public void setClientId(int clientId) {
-        this.clientId = clientId;
+    public void setClient_id(int client_id) {
+        this.client_id = client_id;
     }
 
     public Timestamp getDeadline() {
