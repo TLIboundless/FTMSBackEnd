@@ -23,7 +23,7 @@ public class ClientsController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String saveToDatabase(@RequestBody final Clients client){
         clientsRepository.save(client);
-        return "adding complete!";
+        return "client added!";
     }
 
 

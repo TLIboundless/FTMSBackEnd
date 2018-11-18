@@ -23,7 +23,7 @@ public class TaskController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String saveToDatabase(@RequestBody final Task task){
         taskRepository.save(task);
-        return "adding complete!";
+        return "task added!";
     }
 
 

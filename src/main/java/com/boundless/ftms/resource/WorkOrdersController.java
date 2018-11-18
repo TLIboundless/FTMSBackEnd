@@ -3,7 +3,7 @@ package com.boundless.ftms.resource;
 import java.util.List;
 
 import com.boundless.ftms.model.WorkOrders;
-import com.boundless.ftms.repository.WorkOrdersRepository;
+import com.boundless.ftms.repository.WorkOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.*;
 public class WorkOrdersController {
 
     @Autowired
-    WorkOrdersRespository workOrdersRepository;
+    WorkOrderRepository workOrderRepository;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     private List<WorkOrders> getAll() {
-        return workOrdersRepository.findAll();
+        return workOrderRepository.findAll();
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String saveToDatabase(@RequestBody final WorkOrders workOrder){
-        workOrdersRepository.save(workOrder);
-        return "adding complete!";
+        workOrderRepository.save(workOrder);
+        return "work order added";
     }
 
 
