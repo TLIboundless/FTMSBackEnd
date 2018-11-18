@@ -38,4 +38,13 @@ public class TimesheetsController {
         timesheetsRepository.save(ts);
         return "timesheet approved";
     }
+
+    @RequestMapping(value = "/reject", method = RequestMethod.POST)
+    public String reject(int timesheetID, @RequestBody String rejectReason) {
+        Timesheets ts = timesheetsRepository.getOne(timesheetID);
+        ts.setApprovalStatus("Rejected");
+        ts.setRejectionReason(rejectReason);
+        timesheetsRepository.save(ts);
+        return "timesheet rejected";
+    }
 }
