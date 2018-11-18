@@ -22,7 +22,7 @@ public class Timesheets {
     private int jobID;
 
     @Column(name = "time_submitted")
-    private Timestamp timeSumbitted = null;
+    private Timestamp timeSubmitted = null;
 
     @Column(name = "approval_status")
     private String approvalStatus;
@@ -40,7 +40,7 @@ public class Timesheets {
                       Timestamp timeApproved) {
         this.workerID = workerID;
         this.jobID = jobID;
-        this.timeSumbitted = timeSubmitted;
+        this.timeSubmitted = timeSubmitted;
         this.approvalStatus = approvalStatus;
         this.rejectionReason = rejectionReason;
         this.timeApproved = timeApproved;
@@ -58,8 +58,8 @@ public class Timesheets {
         return jobID;
     }
 
-    public Timestamp getTimeSumbitted() {
-        return timeSumbitted;
+    public Timestamp getTimeSubmitted() {
+        return timeSubmitted;
     }
 
     public String getApprovalStatus() {
@@ -82,8 +82,8 @@ public class Timesheets {
         this.jobID = jobID;
     }
 
-    public void setTimeSumbitted(Timestamp timeSumbitted) {
-        this.timeSumbitted = timeSumbitted;
+    public void setTimeSubmitted(Timestamp timeSubmitted) {
+        this.timeSubmitted = timeSubmitted;
     }
 
 //    public void setApprovalStatus(String approvalStatus) {
