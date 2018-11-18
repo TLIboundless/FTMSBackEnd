@@ -23,7 +23,7 @@ public class TimesheetsController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String saveToDatabase(@RequestBody final Timesheets timesheet){
         timesheetsRepository.save(timesheet);
-        return "adding complete!";
+        return "timesheets added";
     }
 
 
