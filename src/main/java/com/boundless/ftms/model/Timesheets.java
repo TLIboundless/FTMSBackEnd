@@ -90,24 +90,6 @@ public class Timesheets {
         this.approvalStatus = approvalStatus;
     }
 
-//    public void submit() {
-//        LocalDateTime localDateTime = LocalDateTime.now();
-//        this.timeSubmitted = Timestamp.valueOf(localDateTime);
-//        this.approvalStatus = "Pending";
-//        // TODO: Write code to submit the timesheet to the supervisor.
-//    }
-//
-//    public void approve() {
-//        LocalDateTime localDateTime = LocalDateTime.now();
-//        this.approvalStatus = "Approved";
-//        this.timeApproved = Timestamp.valueOf(localDateTime);
-//    }
-//
-//    public void reject(String rejectionReason) {
-//        this.rejectionReason = rejectionReason;
-//        this.approvalStatus = "Rejected";
-//    }
-
     public void setRejectionReason(String rejectionReason) {
         this.rejectionReason = rejectionReason;
     }
