@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import java.sql.Timestamp;
 
 @Entity
-public class WorkOrder {
+public class WorkOrders {
 /*
     static List<String> allSkills = new ArrayList<String>();
     // when database and backend are connected, take from the database
@@ -38,7 +38,7 @@ public class WorkOrder {
     @Column(name = "description")
     private String description;
 
-    public WorkOrder() {}
+    public WorkOrders() {}
 
 
     public int getId() {
