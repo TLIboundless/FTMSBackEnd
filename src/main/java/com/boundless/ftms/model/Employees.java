@@ -9,7 +9,7 @@ import javax.persistence.Id;
 // need to keep track of new workers, need to be added to database!
 // getters and setters depending on sprint youre working on add what is needed.
 @Entity
-public class Worker {
+public class Employees {
     @Id
     @GeneratedValue
     @Column(name = "lastName")
@@ -19,7 +19,7 @@ public class Worker {
     @Column(name = "email")
     private String email;
     @Column(name = "type")
-    private Type workerType;
+    private String workerType;
 
     public String getLastName() {
         return lastName;
@@ -45,24 +45,18 @@ public class Worker {
         this.email = email;
     }
 
-    public Type getWorkerType() {
+    public String getWorkerType() {
         return workerType;
     }
 
-    public void setWorkerType(Type workerType) {
+    public void setWorkerType(String workerType) {
         this.workerType = workerType;
     }
 
-
-    // Types of employees - can be edited.
-    private enum Type {
-        Welder, Supervisor
+    public Employees() {
     }
 
-    public Worker() {
-    }
-
-    public Worker(String firstName, String lastName, String workerID, Type workerType, String email) {
+    public Employees(String firstName, String lastName, String workerID, String workerType, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.workerType = workerType;
