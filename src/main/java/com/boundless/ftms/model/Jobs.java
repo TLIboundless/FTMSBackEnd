@@ -7,41 +7,41 @@ public class Jobs {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "worker_id")
-    private int workerID;
+    private int worker_id;
     @Column (name = "supervisor_id")
-    private int supervisorID;
+    private int supervisor_id;
     @Column (name = "workorder_id")
-    private int workorderID;
+    private int workorder_id;
 
     public Jobs() {}
 
-    public Jobs(int workerID, int workorderID, int superintendedID){
-        this.workerID = workerID;
-        this.workorderID = workorderID;
-        this.supervisorID = superintendedID;
+    public Jobs(int workerID, int workorder_id, int superintendedID){
+        this.worker_id = workerID;
+        this.workorder_id = workorder_id;
+        this.supervisor_id = superintendedID;
     }
-    public int getWorkerID() {
-        return workerID;
-    }
-
-    public void setWorkerID(int workerID) {
-        this.workerID = workerID;
+    public int getWorker_id() {
+        return worker_id;
     }
 
-    public int getSupervisorID() {
-        return supervisorID;
+    public void setWorker_id(int worker_id) {
+        this.worker_id = worker_id;
     }
 
-    public void setSupervisorID(int supervisorID) {
-        this.supervisorID = supervisorID;
+    public int getSupervisor_id() {
+        return supervisor_id;
     }
 
-    public int getWorkorderID() {
-        return workorderID;
+    public void setSupervisor_id(int supervisor_id) {
+        this.supervisor_id = supervisor_id;
     }
 
-    public void setWorkorderID(int workorderID) {
-        this.workorderID = workorderID;
+    public int getWorkorder_id() {
+        return workorder_id;
+    }
+
+    public void setWorkorder_id(int workorder_id) {
+        this.workorder_id = workorder_id;
     }
 
 
