@@ -1,6 +1,6 @@
 package com.boundless.ftms.repository;
-import com.boundless.ftms.model.Worker;
+import com.boundless.ftms.model.Employees;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface WorkerRepository extends JpaRepository<Worker, Integer> {
+public interface EmployeesRepository extends JpaRepository<Employees, Integer> {
 }
