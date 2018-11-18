@@ -23,7 +23,7 @@ public class JobsController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String saveToDatabase(@RequestBody final Jobs job){
         jobsRepository.save(job);
-        return "adding complete!";
+        return "job added!";
     }
 
 

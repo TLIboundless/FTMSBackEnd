@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class WorkOrdersController {
 
     @Autowired
-    WorkOrdersRespository workOrdersRepository;
+    WorkOrdersRepository workOrdersRepository;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     private List<WorkOrders> getAll() {
@@ -23,7 +23,7 @@ public class WorkOrdersController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String saveToDatabase(@RequestBody final WorkOrders workOrder){
         workOrdersRepository.save(workOrder);
-        return "adding complete!";
+        return "work order added";
     }
 
 
