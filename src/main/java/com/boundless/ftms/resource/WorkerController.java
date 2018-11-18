@@ -6,7 +6,7 @@ import com.boundless.ftms.repository.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 @RestController
-@RequestMapping(value = "/rest/task")
+@RequestMapping(value = "/rest/worker")
 public class WorkerController {
     @Autowired
     WorkerRepository workerRepository;
