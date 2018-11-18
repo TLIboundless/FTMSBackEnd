@@ -93,6 +93,7 @@ public class Timesheets {
     public void submit() {
         LocalDateTime localDateTime = LocalDateTime.now();
         this.timeSubmitted = Timestamp.valueOf(localDateTime);
+        this.approvalStatus = "Pending";
         // TODO: Write code to submit the timesheet to the supervisor.
     }
 
