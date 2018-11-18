@@ -82,37 +82,37 @@ public class Timesheets {
         this.jobID = jobID;
     }
 
-//    public void setTimeSubmitted(Timestamp timeSubmitted) {
-//        this.timeSubmitted = timeSubmitted;
+    public void setTimeSubmitted(Timestamp timeSubmitted) {
+        this.timeSubmitted = timeSubmitted;
+    }
+
+    public void setApprovalStatus(String approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
+//    public void submit() {
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//        this.timeSubmitted = Timestamp.valueOf(localDateTime);
+//        this.approvalStatus = "Pending";
+//        // TODO: Write code to submit the timesheet to the supervisor.
 //    }
-
-//    public void setApprovalStatus(String approvalStatus) {
-//        this.approvalStatus = approvalStatus;
+//
+//    public void approve() {
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//        this.approvalStatus = "Approved";
+//        this.timeApproved = Timestamp.valueOf(localDateTime);
 //    }
-
-    public void submit() {
-        LocalDateTime localDateTime = LocalDateTime.now();
-        this.timeSubmitted = Timestamp.valueOf(localDateTime);
-        this.approvalStatus = "Pending";
-        // TODO: Write code to submit the timesheet to the supervisor.
-    }
-
-    public void approve() {
-        LocalDateTime localDateTime = LocalDateTime.now();
-        this.approvalStatus = "Approved";
-        this.timeApproved = Timestamp.valueOf(localDateTime);
-    }
-
-    public void reject(String rejectionReason) {
-        this.rejectionReason = rejectionReason;
-        this.approvalStatus = "Rejected";
-    }
-
-//    public void setRejectionReason(String rejectionReason) {
+//
+//    public void reject(String rejectionReason) {
 //        this.rejectionReason = rejectionReason;
+//        this.approvalStatus = "Rejected";
 //    }
 
-//    public void setTimeApproved(Timestamp timeApproved) {
-//        this.timeApproved = timeApproved;
-//    }
+    public void setRejectionReason(String rejectionReason) {
+        this.rejectionReason = rejectionReason;
+    }
+
+    public void setTimeApproved(Timestamp timeApproved) {
+        this.timeApproved = timeApproved;
+    }
 }
