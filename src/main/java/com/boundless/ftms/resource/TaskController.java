@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/rest/task")
-public class MainController {
+public class TaskController {
 
     @Autowired
     TaskRepository taskRepository;
@@ -25,5 +25,6 @@ public class MainController {
         taskRepository.save(task);
         return taskRepository.findAll();
     }
+
 
 }
