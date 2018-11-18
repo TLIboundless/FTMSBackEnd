@@ -82,13 +82,19 @@ public class Timesheets {
         this.jobID = jobID;
     }
 
-    public void setTimeSubmitted(Timestamp timeSubmitted) {
-        this.timeSubmitted = timeSubmitted;
-    }
+//    public void setTimeSubmitted(Timestamp timeSubmitted) {
+//        this.timeSubmitted = timeSubmitted;
+//    }
 
 //    public void setApprovalStatus(String approvalStatus) {
 //        this.approvalStatus = approvalStatus;
 //    }
+
+    public void submit() {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        this.timeSubmitted = Timestamp.valueOf(localDateTime);
+        // TODO: Write code to submit the timesheet to the supervisor.
+    }
 
     public void approve() {
         LocalDateTime localDateTime = LocalDateTime.now();
