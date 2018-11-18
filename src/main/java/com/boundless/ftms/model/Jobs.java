@@ -15,10 +15,10 @@ public class Jobs {
 
     public Jobs() {}
 
-    public Jobs(int workerID, int workorder_id, int superintendedID){
+    public Jobs(int workerID, int workorder_id, int supervisor_id){
         this.worker_id = workerID;
         this.workorder_id = workorder_id;
-        this.supervisor_id = superintendedID;
+        this.supervisor_id = supervisor_id;
     }
     public int getWorker_id() {
         return worker_id;
