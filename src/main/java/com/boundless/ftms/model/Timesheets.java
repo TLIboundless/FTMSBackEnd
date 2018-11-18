@@ -10,7 +10,7 @@ public class Timesheets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "timesheet_id")
-    private String timesheetID;
+    private int timesheetID;
 
     @Column(name = "worker_id")
     private int workerID;
@@ -42,7 +42,7 @@ public class Timesheets {
         this.timeApproved = timeApproved;
     }
 
-    public String getTimesheetID() {
+    public int getTimesheetID() {
         return timesheetID;
     }
 
@@ -70,7 +70,7 @@ public class Timesheets {
         return timeApproved;
     }
 
-    public void setTimesheetID(String timesheetID) {
+    public void setTimesheetID(int timesheetID) {
         this.timesheetID = timesheetID;
     }
 
