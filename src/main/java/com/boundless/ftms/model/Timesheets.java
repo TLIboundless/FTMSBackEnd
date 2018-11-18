@@ -96,9 +96,14 @@ public class Timesheets {
         this.timeApproved = Timestamp.valueOf(localDateTime);
     }
 
-    public void setRejectionReason(String rejectionReason) {
+    public void reject(String rejectionReason) {
         this.rejectionReason = rejectionReason;
+        this.approvalStatus = "Rejected";
     }
+
+//    public void setRejectionReason(String rejectionReason) {
+//        this.rejectionReason = rejectionReason;
+//    }
 
 //    public void setTimeApproved(Timestamp timeApproved) {
 //        this.timeApproved = timeApproved;
