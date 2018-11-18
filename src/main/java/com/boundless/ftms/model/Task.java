@@ -1,16 +1,22 @@
 package com.boundless.ftms.model;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+
 import javax.persistence.*;
 import java.util.*;
 import java.sql.*;
 
 @Entity
+@Table(name = "tasks")
 public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "name")
-    private String name;
+    @Column(name = "timesheet_id")
+    private int timesheetID;
+
+    @Column(name = "job_id")
+    private int jobID;
 
     @Column(name = "start_time")
     private Timestamp startTime = null;
@@ -21,34 +27,13 @@ public class Task {
     @Column(name = "duration")
     private int duration; // in minutes
 
-    @Column(name = "worker_id")
-    private int workerID;
-
-    @Column(name = "job_id")
-    private int jobID;
-
     public Task() {}
 
-    public Task(Timestamp startTime, Timestamp endTime, int duration, int workerID, int jobID) {
+    public Task(int jobID, Timestamp startTime, Timestamp endTime, int duration) {
         this.duration = duration;
-        this.workerID = workerID;
         this.jobID = jobID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getWorkerID() {
-        return workerID;
-    }
-
-    public void setWorkerID(int workerID) {
-        this.workerID = workerID;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 
     public int getJobID() {
@@ -81,6 +66,14 @@ public class Task {
 
     public Timestamp getStartTime() {
         return startTime;
+    }
+
+    public int getTimesheetID() {
+        return timesheetID;
+    }
+
+    public void setTimesheetID(int timesheetID) {
+        this.timesheetID = timesheetID;
     }
 }
 
