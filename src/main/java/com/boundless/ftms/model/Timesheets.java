@@ -1,8 +1,11 @@
 package com.boundless.ftms.model;
 
+import org.apache.tomcat.jni.Local;
+
 import javax.persistence.*;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 
 @Entity
 public class Timesheets {
@@ -30,7 +33,8 @@ public class Timesheets {
     @Column(name = "time_approved")
     private Timestamp timeApproved = null;
 
-    public Timesheets() {}
+    public Timesheets() {
+    }
 
     public Timesheets(int workerID, int jobID, Timestamp timeSubmitted, String approvalStatus, String rejectionReason,
                       Timestamp timeApproved) {
@@ -70,13 +74,9 @@ public class Timesheets {
         return timeApproved;
     }
 
-    public void setTimesheetID(int timesheetID) {
-        this.timesheetID = timesheetID;
-    }
+    public void setTimesheetID(int timesheetID) { this.timesheetID = timesheetID; }
 
-    public void setWorkerID(int workerID) {
-        this.workerID = workerID;
-    }
+    public void setWorkerID(int workerID) { this.workerID = workerID; }
 
     public void setJobID(int jobID) {
         this.jobID = jobID;
@@ -86,15 +86,21 @@ public class Timesheets {
         this.timeSumbitted = timeSumbitted;
     }
 
-    public void setApprovalStatus(String approvalStatus) {
-        this.approvalStatus = approvalStatus;
+//    public void setApprovalStatus(String approvalStatus) {
+//        this.approvalStatus = approvalStatus;
+//    }
+
+    public void approve() {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        this.approvalStatus = "Approved";
+        this.timeApproved = Timestamp.valueOf(localDateTime);
     }
 
     public void setRejectionReason(String rejectionReason) {
         this.rejectionReason = rejectionReason;
     }
 
-    public void setTimeApproved(Timestamp timeApproved) {
-        this.timeApproved = timeApproved;
-    }
+//    public void setTimeApproved(Timestamp timeApproved) {
+//        this.timeApproved = timeApproved;
+//    }
 }
