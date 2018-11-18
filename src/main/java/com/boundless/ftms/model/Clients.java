@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Client {
+public class Clients {
 
     @Id
     @GeneratedValue
@@ -19,7 +19,7 @@ public class Client {
     @Column(name = "email")
     private String email;
 
-    public Client() {
+    public Clients() {
     }
 
     public int getClientsID() {
