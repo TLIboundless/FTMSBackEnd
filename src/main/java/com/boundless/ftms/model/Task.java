@@ -1,9 +1,6 @@
 package com.boundless.ftms.model;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-
 import javax.persistence.*;
-import java.util.*;
 import java.sql.*;
 
 @Entity
@@ -13,35 +10,35 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "task_id")
-    private int taskID;
+    private int task_id;
 
     @Column(name = "job_id")
-    private int jobID;
+    private int job_id;
 
     @Column(name = "start_time")
-    private Timestamp startTime = null;
+    private Timestamp start_time = null;
 
     @Column(name = "end_time")
-    private Timestamp endTime = null;
+    private Timestamp end_time = null;
 
     @Column(name = "duration")
     private int duration; // in minutes
 
     public Task() {}
 
-    public Task(int jobID, Timestamp startTime, Timestamp endTime, int duration) {
+    public Task(int job_id, Timestamp start_time, Timestamp end_time, int duration) {
         this.duration = duration;
-        this.jobID = jobID;
-        this.startTime = startTime;
-        this.endTime = endTime;
+        this.job_id = job_id;
+        this.start_time = start_time;
+        this.end_time = end_time;
     }
 
-    public int getJobID() {
-        return jobID;
+    public int getJob_id() {
+        return job_id;
     }
 
-    public void setJobID(int jobID) {
-        this.jobID = jobID;
+    public void setJob_id(int job_id) {
+        this.job_id = job_id;
     }
 
     public double getDuration() {
@@ -52,28 +49,28 @@ public class Task {
         this.duration = duration;
     }
 
-    public Timestamp getEndTime() {
-        return endTime;
+    public Timestamp getEnd_time() {
+        return end_time;
     }
 
-    public void setEndTime(Timestamp endTime) {
-        this.endTime = endTime;
+    public void setEnd_time(Timestamp end_time) {
+        this.end_time = end_time;
     }
 
-    public void setStartTime(Timestamp startTime) {
-        this.startTime = startTime;
+    public void setStart_time(Timestamp start_time) {
+        this.start_time = start_time;
     }
 
-    public Timestamp getStartTime() {
-        return startTime;
+    public Timestamp getStart_time() {
+        return start_time;
     }
 
-    public int getTaskID() {
-        return taskID;
+    public int getTask_id() {
+        return task_id;
     }
 
-    public void setTaskID(int taskID) {
-        this.taskID = taskID;
+    public void setTask_id(int task_id) {
+        this.task_id = task_id;
     }
 }
 
