@@ -5,25 +5,25 @@ import java.util.List;
 import com.boundless.ftms.model.Task;
 import com.boundless.ftms.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
-@RequestMapping(value = "/rest/task")
+@RequestMapping("/task")
 public class TaskController {
 
     @Autowired
     TaskRepository taskRepository;
 
-    @GetMapping(value = "/all")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     private List<Task> getAll() {
         return taskRepository.findAll();
     }
 
-    @PostMapping(value = "/insert")
-    public List<Task> saveToDatabase(@RequestBody final Task task){
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String saveToDatabase(@RequestBody final Task task){
         taskRepository.save(task);
-        return taskRepository.findAll();
+        return "adding complete!";
     }
 
 

@@ -6,23 +6,24 @@ import com.boundless.ftms.model.Employees;
 import com.boundless.ftms.repository.EmployeesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sun.misc.Request;
 
 @RestController
-@RequestMapping(value = "/rest/employees")
+@RequestMapping("/employees")
 public class EmployeesController {
 
     @Autowired
     EmployeesRepository employeesRepository;
 
-    @GetMapping(value = "/all")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     private List<Employees> getAll() {
         return employeesRepository.findAll();
     }
 
-    @PostMapping(value = "/insert")
-    public List<Employees> saveToDatabase(@RequestBody final Employees employees) {
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String saveToDatabase(@RequestBody Employees employees) {
         employeesRepository.save(employees);
-        return employeesRepository.findAll();
+        return "employees updated";
     }
 
 }
