@@ -12,8 +12,8 @@ public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "timesheet_id")
-    private int timesheetID;
+    @Column(name = "task_id")
+    private int taskID;
 
     @Column(name = "job_id")
     private int jobID;
@@ -68,12 +68,12 @@ public class Task {
         return startTime;
     }
 
-    public int getTimesheetID() {
-        return timesheetID;
+    public int getTaskID() {
+        return taskID;
     }
 
-    public void setTimesheetID(int timesheetID) {
-        this.timesheetID = timesheetID;
+    public void setTaskID(int taskID) {
+        this.taskID = taskID;
     }
 }
 
