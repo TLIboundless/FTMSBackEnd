@@ -29,6 +29,16 @@ public class TimesheetsController {
         return "timesheets added";
     }
 
+    @RequestMapping(value = "/submit", method = RequestMethod.POST)
+    public String submit(int timesheetID) {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        Timesheets ts = timesheetsRepository.getOne(timesheetID);
+        ts.setApprovalStatus("Pending");
+        ts.setTimeSubmitted(Timestamp.valueOf(localDateTime));
+        timesheetsRepository.save(ts);
+        return "timesheet submitted";
+    }
+
     @RequestMapping(value = "/approve", method = RequestMethod.POST)
     public String approve(int timesheetID) {
         LocalDateTime localDateTime = LocalDateTime.now();
