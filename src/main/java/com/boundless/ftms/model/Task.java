@@ -1,9 +1,6 @@
 package com.boundless.ftms.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.*;
 import java.sql.*;
 
@@ -11,7 +8,7 @@ import java.sql.*;
 public class Task {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "name")
     private String name;
 

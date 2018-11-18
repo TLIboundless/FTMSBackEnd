@@ -1,9 +1,6 @@
 package com.boundless.ftms.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 // need to keep track of new workers, need to be added to database!
@@ -11,7 +8,9 @@ import javax.persistence.Id;
 @Entity
 public class Employees {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    private int id;
     @Column(name = "lastName")
     private String lastName;
     @Column(name = "firstName")
@@ -56,7 +55,7 @@ public class Employees {
     public Employees() {
     }
 
-    public Employees(String firstName, String lastName, String workerID, String workerType, String email) {
+    public Employees(String firstName, String lastName, String workerType, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.workerType = workerType;
