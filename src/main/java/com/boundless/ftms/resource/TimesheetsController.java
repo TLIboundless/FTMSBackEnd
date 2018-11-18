@@ -1,5 +1,8 @@
 package com.boundless.ftms.resource;
 
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.boundless.ftms.model.Timesheets;
@@ -26,5 +29,13 @@ public class TimesheetsController {
         return "timesheets added";
     }
 
-
+    @RequestMapping(value = "/approve", method = RequestMethod.POST)
+    public String approve(int timesheetID) {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        Timesheets ts = timesheetsRepository.getOne(timesheetID);
+        ts.setApprovalStatus("Approved");
+        ts.setTimeApproved(Timestamp.valueOf(localDateTime));
+        timesheetsRepository.save(ts);
+        return "timesheet approved";
+    }
 }
