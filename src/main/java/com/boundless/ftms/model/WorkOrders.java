@@ -37,6 +37,15 @@ public class WorkOrders {
 
     public WorkOrders() {}
 
+    public WorkOrders(int clientId, Timestamp deadline, boolean completed, String location, String skills,
+                      String description) {
+        this.clientId = clientId;
+        this.deadline = deadline;
+        this.completed = completed;
+        this.location = location;
+        this.skills = skills;
+    }
+
 
     public int getId() {
         return id;

@@ -16,7 +16,11 @@ public class Clients {
     @Column(name = "email")
     private String email;
 
-    public Clients() {
+    public Clients() {}
+
+    public Clients(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 
     public int getClientsID() {

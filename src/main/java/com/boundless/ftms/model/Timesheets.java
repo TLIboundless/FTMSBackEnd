@@ -30,7 +30,16 @@ public class Timesheets {
     @Column(name = "time_approved")
     private Timestamp timeApproved = null;
 
-    public Timesheets() {
+    public Timesheets() {}
+
+    public Timesheets(int workerID, int jobID, Timestamp timeSubmitted, String approvalStatus, String rejectionReason,
+                      Timestamp timeApproved) {
+        this.workerID = workerID;
+        this.jobID = jobID;
+        this.timeSumbitted = timeSubmitted;
+        this.approvalStatus = approvalStatus;
+        this.rejectionReason = rejectionReason;
+        this.timeApproved = timeApproved;
     }
 
     public String getTimesheetID() {

@@ -27,10 +27,9 @@ public class Task {
     @Column(name = "job_id")
     private int jobID;
 
-    public Task() {
-    }
+    public Task() {}
 
-    public Task(int duration, int workerID, int jobID) {
+    public Task(Timestamp startTime, Timestamp endTime, int duration, int workerID, int jobID) {
         this.duration = duration;
         this.workerID = workerID;
         this.jobID = jobID;

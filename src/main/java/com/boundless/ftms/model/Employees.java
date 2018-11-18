@@ -20,6 +20,14 @@ public class Employees {
     @Column(name = "type")
     private String workerType;
 
+    public Employees(String lastName, String firstName, String email, String workerType) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.workerType = workerType;
+        this.email = email;
+
+    }
+
     public String getLastName() {
         return lastName;
     }
@@ -53,14 +61,6 @@ public class Employees {
     }
 
     public Employees() {
-    }
-
-    public Employees(String firstName, String lastName, String workerType, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.workerType = workerType;
-        this.email = email;
-
     }
 
 }

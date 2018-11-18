@@ -13,11 +13,11 @@ public class Jobs {
     @Column (name = "workorder_id")
     private int workorderID;
 
-    public Jobs(){}
+    public Jobs() {}
 
-    public Jobs(int workerID, int workerorderID, int superintendedID){
+    public Jobs(int workerID, int workorderID, int superintendedID){
         this.workerID = workerID;
-        this.workorderID = workerorderID;
+        this.workorderID = workorderID;
         this.supervisorID = superintendedID;
     }
     public int getWorkerID() {
