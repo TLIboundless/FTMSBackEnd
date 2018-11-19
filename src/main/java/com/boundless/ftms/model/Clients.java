@@ -8,7 +8,7 @@ public class Clients {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "clients_id")
-    private int clientsID;
+    private int clients_id;
 
     @Column(name = "name")
     private String name;
@@ -23,8 +23,8 @@ public class Clients {
         this.email = email;
     }
 
-    public int getClientsID() {
-        return clientsID;
+    public int getClients_id() {
+        return clients_id;
     }
 
     public String getName() {
@@ -35,8 +35,8 @@ public class Clients {
         return email;
     }
 
-    public void setClientsID(int clientsID) {
-        this.clientsID = clientsID;
+    public void setClients_id(int clients_id) {
+        this.clients_id = clients_id;
     }
 
     public void setName(String name) {

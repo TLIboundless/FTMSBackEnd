@@ -18,12 +18,12 @@ public class Employees {
     @Column(name = "email")
     private String email;
     @Column(name = "type")
-    private String workerType;
+    private String type;
 
-    public Employees(String lastName, String firstName, String email, String workerType) {
+    public Employees(String lastName, String firstName, String email, String type) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.workerType = workerType;
+        this.type = type;
         this.email = email;
 
     }
@@ -52,12 +52,12 @@ public class Employees {
         this.email = email;
     }
 
-    public String getWorkerType() {
-        return workerType;
+    public String getType() {
+        return type;
     }
 
-    public void setWorkerType(String workerType) {
-        this.workerType = workerType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Employees() {

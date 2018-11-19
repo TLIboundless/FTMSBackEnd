@@ -1,11 +1,8 @@
 package com.boundless.ftms.model;
 
-import org.apache.tomcat.jni.Local;
-
 import javax.persistence.*;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 
 @Entity
 public class Timesheets {
@@ -13,88 +10,88 @@ public class Timesheets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "timesheet_id")
-    private int timesheetID;
+    private int timesheet_id;
 
     @Column(name = "worker_id")
-    private int workerID;
+    private int worker_id;
 
     @Column(name = "job_id")
-    private int jobID;
+    private int job_id;
 
     @Column(name = "time_submitted")
-    private Timestamp timeSubmitted = null;
+    private Timestamp time_submitted = null;
 
     @Column(name = "approval_status")
-    private String approvalStatus;
+    private String approval_status;
 
     @Column(name = "rejection_reason")
-    private String rejectionReason;
+    private String rejection_reason;
 
     @Column(name = "time_approved")
-    private Timestamp timeApproved = null;
+    private Timestamp time_approved = null;
 
     public Timesheets() {
     }
 
-    public Timesheets(int workerID, int jobID, Timestamp timeSubmitted, String approvalStatus, String rejectionReason,
-                      Timestamp timeApproved) {
-        this.workerID = workerID;
-        this.jobID = jobID;
-        this.timeSubmitted = timeSubmitted;
-        this.approvalStatus = approvalStatus;
-        this.rejectionReason = rejectionReason;
-        this.timeApproved = timeApproved;
+    public Timesheets(int worker_id, int job_id, Timestamp time_submitted, String approval_status, String rejection_reason,
+                      Timestamp time_approved) {
+        this.worker_id = worker_id;
+        this.job_id = job_id;
+        this.time_submitted = time_submitted;
+        this.approval_status = approval_status;
+        this.rejection_reason = rejection_reason;
+        this.time_approved = time_approved;
     }
 
-    public int getTimesheetID() {
-        return timesheetID;
+    public int getTimesheet_id() {
+        return timesheet_id;
     }
 
-    public int getWorkerID() {
-        return workerID;
+    public int getWorker_id() {
+        return worker_id;
     }
 
-    public int getJobID() {
-        return jobID;
+    public int getJob_id() {
+        return job_id;
     }
 
-    public Timestamp getTimeSubmitted() {
-        return timeSubmitted;
+    public Timestamp getTime_submitted() {
+        return time_submitted;
     }
 
-    public String getApprovalStatus() {
-        return approvalStatus;
+    public String getApproval_status() {
+        return approval_status;
     }
 
-    public String getRejectionReason() {
-        return rejectionReason;
+    public String getRejection_reason() {
+        return rejection_reason;
     }
 
-    public Timestamp getTimeApproved() {
-        return timeApproved;
+    public Timestamp getTime_approved() {
+        return time_approved;
     }
 
-    public void setTimesheetID(int timesheetID) { this.timesheetID = timesheetID; }
+    public void setTimesheet_id(int timesheet_id) { this.timesheet_id = timesheet_id; }
 
-    public void setWorkerID(int workerID) { this.workerID = workerID; }
+    public void setWorker_id(int worker_id) { this.worker_id = worker_id; }
 
-    public void setJobID(int jobID) {
-        this.jobID = jobID;
+    public void setJob_id(int job_id) {
+        this.job_id = job_id;
     }
 
-    public void setTimeSubmitted(Timestamp timeSubmitted) {
-        this.timeSubmitted = timeSubmitted;
+    public void setTime_submitted(Timestamp time_submitted) {
+        this.time_submitted = time_submitted;
     }
 
-    public void setApprovalStatus(String approvalStatus) {
-        this.approvalStatus = approvalStatus;
+    public void setApproval_status(String approval_status) {
+        this.approval_status = approval_status;
     }
 
-    public void setRejectionReason(String rejectionReason) {
-        this.rejectionReason = rejectionReason;
+    public void setRejection_reason(String rejection_reason) {
+        this.rejection_reason = rejection_reason;
     }
 
-    public void setTimeApproved(Timestamp timeApproved) {
-        this.timeApproved = timeApproved;
+    public void setTime_approved(Timestamp time_approved) {
+        this.time_approved = time_approved;
     }
 }
