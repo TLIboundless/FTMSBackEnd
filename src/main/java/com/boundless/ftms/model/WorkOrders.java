@@ -91,14 +91,8 @@ public class WorkOrders {
         return skills;
     }
 
-    public void setSkills(String[] skills) {
-        StringBuilder concatenatedSkills = new StringBuilder();
-        for (String skill: skills) {
-            concatenatedSkills.append(skill + ",");
-        }
-        this.skills = concatenatedSkills.replace(concatenatedSkills.length()-1, concatenatedSkills.length(),
-                "").toString();
-
+    public void setSkills(String skills) {
+        this.skills = skills;
     }
 
     public String getDescription() {
