@@ -43,55 +43,55 @@ public class Timesheets {
         this.time_approved = time_approved;
     }
 
-    public int getTimesheet_id() {
+    public int getTimesheetId() {
         return timesheet_id;
     }
 
-    public int getWorker_id() {
+    public int getWorkerId() {
         return worker_id;
     }
 
-    public int getJob_id() {
+    public int getJobId() {
         return job_id;
     }
 
-    public Timestamp getTime_submitted() {
+    public Timestamp getTimeSubmitted() {
         return time_submitted;
     }
 
-    public String getApproval_status() {
+    public String getApprovalStatus() {
         return approval_status;
     }
 
-    public String getRejection_reason() {
+    public String getRejectionReason() {
         return rejection_reason;
     }
 
-    public Timestamp getTime_approved() {
+    public Timestamp getTimeApproved() {
         return time_approved;
     }
 
-    public void setTimesheet_id(int timesheet_id) { this.timesheet_id = timesheet_id; }
+    public void setTimesheetId(int timesheet_id) { this.timesheet_id = timesheet_id; }
 
-    public void setWorker_id(int worker_id) { this.worker_id = worker_id; }
+    public void setWorkerId(int worker_id) { this.worker_id = worker_id; }
 
-    public void setJob_id(int job_id) {
+    public void setJobId(int job_id) {
         this.job_id = job_id;
     }
 
-    public void setTime_submitted(Timestamp time_submitted) {
+    public void setTimeSubmitted(Timestamp time_submitted) {
         this.time_submitted = time_submitted;
     }
 
-    public void setApproval_status(String approval_status) {
+    public void setApprovalStatus(String approval_status) {
         this.approval_status = approval_status;
     }
 
-    public void setRejection_reason(String rejection_reason) {
+    public void setRejectionReason(String rejection_reason) {
         this.rejection_reason = rejection_reason;
     }
 
-    public void setTime_approved(Timestamp time_approved) {
+    public void setTimeApproved(Timestamp time_approved) {
         this.time_approved = time_approved;
     }
 }
