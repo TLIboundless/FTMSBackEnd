@@ -5,12 +5,6 @@ import java.sql.Timestamp;
 
 @Entity
 public class WorkOrders {
-/*
-    static List<String> allSkills = new ArrayList<String>();
-    // when database and backend are connected, take from the database
-    static List<String> workSites = new ArrayList<String>();
-    // when database and backend are connected, take from the database
-*/
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
