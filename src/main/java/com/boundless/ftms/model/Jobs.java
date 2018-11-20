@@ -18,40 +18,41 @@ public class Jobs {
 
     public Jobs() {}
 
-    public Jobs(int worker_id, int workorder_id, int supervisor_id){
+    public Jobs(int job_id, int worker_id, int workorder_id, int supervisor_id){
+        this.job_id = job_id;
         this.worker_id = worker_id;
         this.workorder_id = workorder_id;
         this.supervisor_id = supervisor_id;
     }
-    public int getJob_id() {
+    public int getJobID() {
         return job_id;
     }
 
-    public void setJob_id(int job_id) {
+    public void setJobID(int job_id) {
         this.job_id = job_id;
     }
 
-    public int getWorker_id() {
+    public int getWorkerID() {
         return worker_id;
     }
 
-    public void setWorker_id(int worker_id) {
+    public void setWorkerID(int worker_id) {
         this.worker_id = worker_id;
     }
 
-    public int getSupervisor_id() {
+    public int getSupervisorID() {
         return supervisor_id;
     }
 
-    public void setSupervisor_id(int supervisor_id) {
+    public void setSupervisorID(int supervisor_id) {
         this.supervisor_id = supervisor_id;
     }
 
-    public int getWorkorder_id() {
+    public int getWorkorderID() {
         return workorder_id;
     }
 
-    public void setWorkorder_id(int workorder_id) {
+    public void setWorkorderID(int workorder_id) {
         this.workorder_id = workorder_id;
     }
 
