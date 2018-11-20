@@ -33,8 +33,9 @@ public class Timesheets {
     public Timesheets() {
     }
 
-    public Timesheets(int worker_id, int job_id, Timestamp time_submitted, String approval_status, String rejection_reason,
+    public Timesheets(int timesheet_id, int worker_id, int job_id, Timestamp time_submitted, String approval_status, String rejection_reason,
                       Timestamp time_approved) {
+        this.timesheet_id = timesheet_id;
         this.worker_id = worker_id;
         this.job_id = job_id;
         this.time_submitted = time_submitted;

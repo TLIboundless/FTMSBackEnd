@@ -26,7 +26,8 @@ public class Task {
 
     public Task() {}
 
-    public Task(int job_id, Timestamp start_time, Timestamp end_time, int duration) {
+    public Task(int task_id, int job_id, Timestamp start_time, Timestamp end_time, int duration) {
+        this.task_id = task_id;
         this.duration = duration;
         this.job_id = job_id;
         this.start_time = start_time;

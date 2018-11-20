@@ -24,7 +24,7 @@ public class Clients {
         this.email = email;
     }
 
-    public int getClients_id() {
+    public int getClientsID() {
         return clients_id;
     }
 
@@ -36,7 +36,7 @@ public class Clients {
         return email;
     }
 
-    public void setClients_id(int clients_id) {
+    public void setClientsID(int clients_id) {
         this.clients_id = clients_id;
     }
 
