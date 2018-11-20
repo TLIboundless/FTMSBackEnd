@@ -20,12 +20,20 @@ public class Employees {
     @Column(name = "type")
     private String type;
 
-    public Employees(String lastName, String firstName, String email, String type) {
+    public Employees(int id, String lastName, String firstName, String email, String type) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.type = type;
         this.email = email;
 
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getLastName() {
