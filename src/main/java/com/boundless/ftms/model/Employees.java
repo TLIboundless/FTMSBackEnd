@@ -2,9 +2,6 @@ package com.boundless.ftms.model;
 
 import javax.persistence.*;
 
-
-// need to keep track of new workers, need to be added to database!
-// getters and setters depending on sprint youre working on add what is needed.
 @Entity
 public class Employees {
     @Id
