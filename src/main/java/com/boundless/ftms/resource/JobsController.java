@@ -26,5 +26,10 @@ public class JobsController {
         return "job added!";
     }
 
+    @RequestMapping(value = "/fromID", method = RequestMethod.GET)
+    public Jobs getJobFromID(@RequestBody final String id) {
+        Integer job_id = Integer.parseInt(id);
+        return jobsRepository.getOne(job_id);
+    }
 
 }
