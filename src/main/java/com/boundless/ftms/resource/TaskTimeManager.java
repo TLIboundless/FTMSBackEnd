@@ -31,6 +31,7 @@ public class TaskTimeManager {
             task.setEndTime(getNow());
             duration = getMinutesDifference(task.getStartTime(), task.getEndTime());
         }
+        // the end time is the last time the task was resumed
         else {
 
             Timestamp now = getNow();
@@ -42,7 +43,10 @@ public class TaskTimeManager {
     }
 
 
-    public double resumeTask(Task task) { return 0.0; }
+    public void resumeTask(Task task) {
+
+        task.setEndTime(getNow());
+    }
 
 
     public void startTask(Task task) {
