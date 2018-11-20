@@ -33,11 +33,11 @@ public class Task {
         this.end_time = end_time;
     }
 
-    public int getJob_id() {
+    public int getJobId() {
         return job_id;
     }
 
-    public void setJob_id(int job_id) {
+    public void setJobId(int job_id) {
         this.job_id = job_id;
     }
 
@@ -49,27 +49,27 @@ public class Task {
         this.duration = duration;
     }
 
-    public Timestamp getEnd_time() {
+    public Timestamp getEndTime() {
         return end_time;
     }
 
-    public void setEnd_time(Timestamp end_time) {
+    public void setEndTime(Timestamp end_time) {
         this.end_time = end_time;
     }
 
-    public void setStart_time(Timestamp start_time) {
+    public void setStartTime(Timestamp start_time) {
         this.start_time = start_time;
     }
 
-    public Timestamp getStart_time() {
+    public Timestamp getStartTime() {
         return start_time;
     }
 
-    public int getTask_id() {
+    public int getTaskId() {
         return task_id;
     }
 
-    public void setTask_id(int task_id) {
+    public void setTaskId(int task_id) {
         this.task_id = task_id;
     }
 }
