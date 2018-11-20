@@ -18,8 +18,8 @@ public class Jobs {
 
     public Jobs() {}
 
-    public Jobs(int workerID, int workorder_id, int supervisor_id){
-        this.worker_id = workerID;
+    public Jobs(int worker_id, int workorder_id, int supervisor_id){
+        this.worker_id = worker_id;
         this.workorder_id = workorder_id;
         this.supervisor_id = supervisor_id;
     }

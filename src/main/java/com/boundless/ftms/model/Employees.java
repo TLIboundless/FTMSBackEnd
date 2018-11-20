@@ -17,6 +17,9 @@ public class Employees {
     @Column(name = "type")
     private String type;
 
+    public Employees() {
+    }
+
     public Employees(int id, String lastName, String firstName, String email, String type) {
         this.id = id;
         this.firstName = firstName;
@@ -63,9 +66,6 @@ public class Employees {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public Employees() {
     }
 
 }
