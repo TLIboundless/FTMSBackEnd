@@ -25,6 +25,7 @@ public class TimesheetsController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String saveToDatabase(@RequestBody final Timesheets timesheet){
+        timesheet.setApprovalStatus("Pending");
         timesheetsRepository.save(timesheet);
         return "timesheets added";
     }
