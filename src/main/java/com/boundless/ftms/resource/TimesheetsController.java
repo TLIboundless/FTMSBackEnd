@@ -44,9 +44,9 @@ public class TimesheetsController {
     }
 
     @RequestMapping(value = "/approve", method = RequestMethod.POST)
-    public String approve(int timesheetID) {
+    public String approve(@RequestBody String timesheetID) {
         LocalDateTime localDateTime = LocalDateTime.now();
-        Timesheets ts = timesheetsRepository.getOne(timesheetID);
+        Timesheets ts = timesheetsRepository.getOne(Integer.parseInt(timesheetID));
         ts.setApprovalStatus("Approved");
         ts.setTimeApproved(Timestamp.valueOf(localDateTime));
         timesheetsRepository.save(ts);
@@ -54,10 +54,10 @@ public class TimesheetsController {
     }
 
     @RequestMapping(value = "/reject", method = RequestMethod.POST)
-    public String reject(int timesheetID, @RequestBody String rejectReason) {
-        Timesheets ts = timesheetsRepository.getOne(timesheetID);
+    public String reject(@RequestParam String id, @RequestParam String message) {
+        Timesheets ts = timesheetsRepository.getOne(Integer.parseInt(id));
         ts.setApprovalStatus("Rejected");
-        ts.setRejectionReason(rejectReason);
+        ts.setRejectionReason(message);
         timesheetsRepository.save(ts);
         return "timesheet rejected";
     }
