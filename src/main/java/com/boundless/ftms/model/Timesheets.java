@@ -12,11 +12,14 @@ public class Timesheets {
     @Column(name = "timesheet_id")
     private int timesheet_id;
 
-    @Column(name = "worker_id")
-    private int worker_id;
-
     @Column(name = "job_id")
     private int job_id;
+
+    @Column(name = "start_time")
+    private Timestamp start_time;
+
+    @Column(name = "end_time")
+    private Timestamp end_time;
 
     @Column(name = "time_submitted")
     private Timestamp time_submitted = null;
@@ -33,10 +36,9 @@ public class Timesheets {
     public Timesheets() {
     }
 
-    public Timesheets(int timesheet_id, int worker_id, int job_id, Timestamp time_submitted, String approval_status, String rejection_reason,
+    public Timesheets(int timesheet_id, int job_id, Timestamp time_submitted, String approval_status, String rejection_reason,
                       Timestamp time_approved) {
         this.timesheet_id = timesheet_id;
-        this.worker_id = worker_id;
         this.job_id = job_id;
         this.time_submitted = time_submitted;
         this.approval_status = approval_status;
@@ -48,12 +50,16 @@ public class Timesheets {
         return timesheet_id;
     }
 
-    public int getWorkerId() {
-        return worker_id;
-    }
-
     public int getJobId() {
         return job_id;
+    }
+
+    public Timestamp getStart_time() {
+        return start_time;
+    }
+
+    public Timestamp getEnd_time() {
+        return end_time;
     }
 
     public Timestamp getTimeSubmitted() {
@@ -74,10 +80,16 @@ public class Timesheets {
 
     public void setTimesheetId(int timesheet_id) { this.timesheet_id = timesheet_id; }
 
-    public void setWorkerId(int worker_id) { this.worker_id = worker_id; }
-
     public void setJobId(int job_id) {
         this.job_id = job_id;
+    }
+
+    public void setStart_time(Timestamp start_time) {
+        this.start_time = start_time;
+    }
+
+    public void setEnd_time(Timestamp end_time) {
+        this.end_time = end_time;
     }
 
     public void setTimeSubmitted(Timestamp time_submitted) {
