@@ -32,5 +32,11 @@ public class WorkOrdersController {
         return workOrdersRepository.findWorkOrdersFromClient(client_id);
     }
 
+    @RequestMapping(value = "/fromJobID", method = RequestMethod.GET)
+    public List<WorkOrders> getWorkOrdersFromJobId(@RequestParam String id) {
+        int job_id = Integer.parseInt(id);
+        return workOrdersRepository.findWorkOrdersFromJobId(job_id);
+    }
+
 
 }
