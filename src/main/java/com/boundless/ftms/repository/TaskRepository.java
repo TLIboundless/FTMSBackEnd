@@ -1,7 +1,6 @@
 package com.boundless.ftms.repository;
 
 import com.boundless.ftms.model.Task;
-import com.boundless.ftms.model.Timesheets;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -15,10 +14,10 @@ public interface TaskRepository extends JpaRepository<Task, Integer> {
     public static final String DELETE_TASK_BY_ID = "DELETE FROM tasks WHERE task_id = ?1";
 
     @Query(value = FIND_TASKS_FROM_JOB, nativeQuery = true)
-    public List<Timesheets> findTasksFromJob(int job_id);
+    List<Task> findTasksFromJob(int job_id);
 
     @Query(value = DELETE_TASK_BY_ID, nativeQuery = true)
-    public void deleteTaskById(int task_id);
+    void deleteTaskById(int task_id);
 
 
 }

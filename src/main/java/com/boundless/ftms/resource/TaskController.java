@@ -26,5 +26,11 @@ public class TaskController {
         return "task added!";
     }
 
+    @RequestMapping(value = "/get_tasks/{job_id}", method = RequestMethod.GET)
+    public List<Task> getTasksFromJobId(@PathVariable("job_id") final Integer job_id){
+        List<Task> list_of_tasks = taskRepository.findTasksFromJob(job_id);
+        return list_of_tasks;
+    }
+
 
 }
