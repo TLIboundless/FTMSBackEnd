@@ -8,7 +8,7 @@ import java.util.*;
 public interface TimesheetsRepository extends JpaRepository<Timesheets, Integer>{
 
     // SQL queries
-    public static final String FIND_TIMSHEETS_FROM_JOB = "SELECT * FROM timesheet WHERE job_id = ?1";
+    public static final String FIND_TIMSHEETS_FROM_JOB = "SELECT * FROM timesheets WHERE job_id = ?1";
 
 
     @Query(value = FIND_TIMSHEETS_FROM_JOB, nativeQuery = true)
