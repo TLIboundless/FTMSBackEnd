@@ -25,7 +25,7 @@ public class Task {
     private int duration; // in minutes
 
     @Column(name = "task_name")
-    private String name;
+    private String task_name;
 
     public Task() {}
 
@@ -35,7 +35,7 @@ public class Task {
         this.job_id = job_id;
         this.start_time = start_time;
         this.end_time = end_time;
-        this.name = name;
+        this.task_name = name;
     }
 
 
@@ -80,11 +80,11 @@ public class Task {
     }
 
     public String getName() {
-        return name;
+        return task_name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.task_name = name;
     }
 }
 
