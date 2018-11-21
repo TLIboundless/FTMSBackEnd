@@ -34,6 +34,11 @@ public class TaskController {
         return taskRepository.findTasksFromJob(jobId);
     }
 
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
+    public void deleteTaskswithTaskId(@PathVariable("id") int id) {
+        taskRepository.deleteTaskById(id);
+    }
+
     @RequestMapping(value = "/overwrite", method = RequestMethod.POST)
     public Task overwriteExistingTask(@RequestParam String id,
                                       @RequestParam String name,
