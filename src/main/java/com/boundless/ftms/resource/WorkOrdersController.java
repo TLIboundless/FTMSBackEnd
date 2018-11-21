@@ -27,8 +27,9 @@ public class WorkOrdersController {
     }
 
     @RequestMapping(value = "/fromID", method = RequestMethod.GET)
-    public List<WorkOrders> getWorkOrdersFromID(@RequestBody Integer id) {
-        return workOrdersRepository.findWorkOrdersFromClient(id);
+    public List<WorkOrders> getWorkOrdersFromClientId(@RequestParam String id) {
+        int client_id = Integer.parseInt(id);
+        return workOrdersRepository.findWorkOrdersFromClient(client_id);
     }
 
 

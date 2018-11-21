@@ -5,7 +5,6 @@ import java.util.List;
 import com.boundless.ftms.model.Task;
 import com.boundless.ftms.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -27,7 +26,8 @@ public class TaskController {
     }
 
     @RequestMapping(value = "/get_tasks", method = RequestMethod.GET)
-    public List<Task> getTasksFromJobId(@RequestBody Integer job_id){
+    public List<Task> getTasksFromJobId(@RequestParam String id){
+        Integer job_id = Integer.parseInt(id);
         return taskRepository.findTasksFromJob(job_id);
     }
 
