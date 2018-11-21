@@ -34,8 +34,8 @@ public class TaskController {
         return taskRepository.findTasksFromJob(jobId);
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
-    public void deleteTaskswithTaskId(@PathVariable("id") int id) {
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public void deleteTasksWithTaskId(@PathVariable("id") int id) {
         taskRepository.deleteTaskById(id);
     }
 
