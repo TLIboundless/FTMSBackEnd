@@ -26,5 +26,11 @@ public class WorkOrdersController {
         return "work order added";
     }
 
+    @RequestMapping(value = "/fromID", method = RequestMethod.GET)
+    public WorkOrders getWorkOrdersFromID(@RequestBody final String id) {
+        Integer order_id = Integer.parseInt(id);
+        return workOrdersRepository.getOne(order_id);
+    }
+
 
 }
