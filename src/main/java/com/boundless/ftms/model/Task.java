@@ -24,15 +24,20 @@ public class Task {
     @Column(name = "duration")
     private int duration; // in minutes
 
+    @Column(name = "task_name")
+    private String task_name;
+
     public Task() {}
 
-    public Task(int task_id, int job_id, Timestamp start_time, Timestamp end_time, int duration) {
+    public Task(int task_id, int job_id, Timestamp start_time, Timestamp end_time, int duration, String name) {
         this.task_id = task_id;
         this.duration = duration;
         this.job_id = job_id;
         this.start_time = start_time;
         this.end_time = end_time;
+        this.task_name = name;
     }
+
 
     public int getJobId() {
         return job_id;
@@ -72,6 +77,14 @@ public class Task {
 
     public void setTaskId(int task_id) {
         this.task_id = task_id;
+    }
+
+    public String getName() {
+        return task_name;
+    }
+
+    public void setName(String name) {
+        this.task_name = name;
     }
 }
 

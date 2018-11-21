@@ -15,14 +15,17 @@ public class Jobs {
     private int supervisor_id;
     @Column (name = "workorder_id")
     private int workorder_id;
+    @Column(name = "job_name")
+    private String job_name;
 
     public Jobs() {}
 
-    public Jobs(int job_id, int worker_id, int workorder_id, int supervisor_id){
+    public Jobs(int job_id, int worker_id, int workorder_id, int supervisor_id, String job_name){
         this.job_id = job_id;
         this.worker_id = worker_id;
         this.workorder_id = workorder_id;
         this.supervisor_id = supervisor_id;
+        this.job_name = job_name;
     }
     public int getJobID() {
         return job_id;
@@ -56,5 +59,11 @@ public class Jobs {
         this.workorder_id = workorder_id;
     }
 
+    public String getJob_name() {
+        return job_name;
+    }
 
+    public void setJob_name(String job_name) {
+        this.job_name = job_name;
+    }
 }

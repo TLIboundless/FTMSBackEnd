@@ -3,6 +3,7 @@ package com.boundless.ftms.resource;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.boundless.ftms.model.Timesheets;
@@ -10,6 +11,8 @@ import com.boundless.ftms.repository.TimesheetsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
+
+import javax.websocket.server.PathParam;
 
 @RestController
 @RequestMapping("/timesheets")
@@ -58,4 +61,10 @@ public class TimesheetsController {
         timesheetsRepository.save(ts);
         return "timesheet rejected";
     }
+
+    @RequestMapping(path = "/get/{jobId}", method = RequestMethod.GET)
+    public List<Timesheets> findTimesheetsWithJobId(@PathVariable("jobId") int jobId) {
+        return timesheetsRepository.findTimesheetsFromJob(jobId);
+    }
+
 }
