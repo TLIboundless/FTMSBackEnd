@@ -35,7 +35,7 @@ public class TaskController {
     }
 
     @RequestMapping(value = "/overwrite", method = RequestMethod.POST)
-    public void overwriteExistingTask(@RequestParam String id,
+    public Task overwriteExistingTask(@RequestParam String id,
                                       @RequestParam String name,
                                       @RequestParam String start,
                                       @RequestParam String end) {
@@ -48,6 +48,7 @@ public class TaskController {
             task.setEndTime(Timestamp.valueOf(end));
         }
         taskRepository.save(task);
+        return taskRepository.getOne(Integer.parseInt(id));
     }
 
 }
