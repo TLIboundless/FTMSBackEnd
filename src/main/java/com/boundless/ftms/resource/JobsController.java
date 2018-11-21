@@ -26,12 +26,12 @@ public class JobsController {
         return "job added!";
     }
 
-    @RequestMapping(value = "/get_jobs_from_worker_id/{workerId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get_from_worker_id/{workerId}", method = RequestMethod.GET)
     public List<Jobs> getJobFromWorkerId(@PathVariable("workerId") int workerId) {
         return jobsRepository.findJobsFromWorker(workerId);
     }
 
-    @RequestMapping(value = "get_jobs_from_job_id/{jobId}", method = RequestMethod.GET)
+    @RequestMapping(value = "get_from_job_id/{jobId}", method = RequestMethod.GET)
     public List<Jobs> getJobFromJobId(@PathVariable("jobId") int jobId){
         return jobsRepository.findJobsFromJobId(jobId);
     }
