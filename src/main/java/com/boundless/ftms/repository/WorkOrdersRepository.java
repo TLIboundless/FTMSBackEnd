@@ -11,12 +11,12 @@ public interface WorkOrdersRepository extends JpaRepository<WorkOrders, Integer>
 
     // SQL queries
     public static final String FIND_ORDERS_FROM_CLIENT = "SELECT * FROM work_orders WHERE client_id = ?1";
-    public static final String FIND_ORDERS_FROM_JOB = "SELECT * FROM work_orders WHERE job_id = ?1";
+    public static final String FIND_ORDERS_FROM_WORKORDER = "SELECT * FROM work_orders WHERE workOrder_id = ?1";
 
 
     @Query(value = FIND_ORDERS_FROM_CLIENT, nativeQuery = true)
     public List<WorkOrders> findWorkOrdersFromClient(int client_id);
 
-    @Query(value = FIND_ORDERS_FROM_JOB, nativeQuery = true)
-    public List<WorkOrders> findWorkOrdersFromJobId(int job_id);
+    @Query(value = FIND_ORDERS_FROM_WORKORDER, nativeQuery = true)
+    public List<WorkOrders> findWorkOrdersFromWorkOrderId(int workOrder_id);
 }

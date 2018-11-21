@@ -26,8 +26,13 @@ public class JobsController {
         return "job added!";
     }
 
-    @RequestMapping(value = "/get/{workerId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get_from_workers_id/{workerId}", method = RequestMethod.GET)
     public List<Jobs> getJobFromWorkerId(@PathVariable("workerId") int workerId) {
         return jobsRepository.findJobsFromWorker(workerId);
+    }
+
+    @RequestMapping(value = "get_from_jobs_id/{jobId}", method = RequestMethod.GET)
+    public List<Jobs> getJobFromJobId(@PathVariable("jobId") int jobId){
+        return jobsRepository.findJobsFromJobId(jobId);
     }
 }
