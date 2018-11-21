@@ -32,7 +32,7 @@ public class WorkOrdersController {
         return workOrdersRepository.findWorkOrdersFromClient(client_id);
     }
 
-    @RequestMapping(value = "/get_from_workOrder_id/{workOrderId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get_from_work_orders_id/{workOrderId}", method = RequestMethod.GET)
     public List<WorkOrders> findWorkOrderWithWorkOrderId(@PathVariable("workOrderId") int workOrderId) {
         return workOrdersRepository.findWorkOrdersFromWorkOrderId(workOrderId);
     }
