@@ -30,4 +30,6 @@ public class JobsController {
     public List<Jobs> getJobFromWorkerId(@PathVariable("workerId") int workerId) {
         return jobsRepository.findJobsFromWorker(workerId);
     }
+
+
 }

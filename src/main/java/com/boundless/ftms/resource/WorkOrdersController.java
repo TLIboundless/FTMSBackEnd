@@ -32,9 +32,9 @@ public class WorkOrdersController {
         return workOrdersRepository.findWorkOrdersFromClient(client_id);
     }
 
-    @RequestMapping(value = "/get_from_job_id/{jobId}", method = RequestMethod.GET)
-    public List<WorkOrders> findTimesheetsWithJobId(@PathVariable("jobId") int jobId) {
-        return workOrdersRepository.findWorkOrdersFromJobId(jobId);
+    @RequestMapping(value = "/get_from_workOrder_id/{workOrderId}", method = RequestMethod.GET)
+    public List<WorkOrders> findWorkOrderWithWorkOrderId(@PathVariable("workOrderId") int workOrderId) {
+        return workOrdersRepository.findWorkOrdersFromWorkOrderId(workOrderId);
     }
 
 
