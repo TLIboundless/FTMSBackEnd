@@ -26,10 +26,8 @@ public class JobsController {
         return "job added!";
     }
 
-    @RequestMapping(value = "/fromID", method = RequestMethod.GET)
-    public List<Jobs> getJobFromWorkerId(@RequestParam String id) {
-        int worker_id = Integer.parseInt(id);
-        return jobsRepository.findJobsFromWorker(worker_id);
+    @RequestMapping(value = "/get/{workerId}", method = RequestMethod.GET)
+    public List<Jobs> getJobFromWorkerId(@PathVariable("workerId") int workerId) {
+        return jobsRepository.findJobsFromWorker(workerId);
     }
-
 }
