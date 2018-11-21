@@ -13,6 +13,6 @@ public interface WorkOrdersRepository extends JpaRepository<WorkOrders, Integer>
 
 
     @Query(value = FIND_ORDERS_FROM_CLIENT, nativeQuery = true)
-    public List<Timesheets> findWorkOrdersFromClient(int client_id);
+    public List<WorkOrders> findWorkOrdersFromClient(int client_id);
 
 }

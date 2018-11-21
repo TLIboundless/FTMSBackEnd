@@ -13,6 +13,6 @@ public interface JobsRepository extends JpaRepository<Jobs, Integer>{
 
 
     @Query(value = FIND_JOBS_FROM_WORKER, nativeQuery = true)
-    public List<Timesheets> findJobsFromWorker(int worker_id);
+    public List<Jobs> findJobsFromWorker(int worker_id);
 
 }
