@@ -3,6 +3,7 @@ package com.boundless.ftms.resource;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.boundless.ftms.model.Timesheets;
@@ -61,8 +62,8 @@ public class TimesheetsController {
         return "timesheet rejected";
     }
 
-    @RequestMapping(value = "/{jobId}", method = RequestMethod.GET)
-    public List<Timesheets> findTimesheetsFromJob(@PathParam("jobId") Integer jobId) {
+    @RequestMapping(path = "/get/{jobId}", method = RequestMethod.GET)
+    public List<Timesheets> findTimesheetsFromJob(@PathVariable final int jobId) {
         return timesheetsRepository.findTimesheetsFromJob(jobId);
     }
 
