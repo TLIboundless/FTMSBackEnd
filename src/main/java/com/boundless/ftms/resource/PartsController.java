@@ -5,10 +5,7 @@ import java.util.List;
 import com.boundless.ftms.model.Parts;
 import com.boundless.ftms.repository.PartsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/parts")
@@ -24,5 +21,10 @@ public class PartsController {
     public String saveToDatabase(@RequestBody final Parts parts){
         partsRepository.save(parts);
         return "parts added!";
+    }
+
+    @RequestMapping(value = "/get_parts", method = RequestMethod.GET)
+    public List<Parts> getPartsFromJobId(@RequestBody int job_id) {
+        return partsRepository.findPartsFromJobId(job_id);
     }
 }
