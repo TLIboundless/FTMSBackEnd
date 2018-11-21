@@ -54,10 +54,9 @@ public class TimesheetsController {
     }
 
     @RequestMapping(value = "/reject", method = RequestMethod.POST)
-    public String reject(@RequestParam String id, @RequestParam String message) {
+    public String reject(@RequestBody String id) {
         Timesheets ts = timesheetsRepository.getOne(Integer.parseInt(id));
         ts.setApprovalStatus("Rejected");
-        ts.setRejectionReason(message);
         timesheetsRepository.save(ts);
         return "timesheet rejected";
     }
