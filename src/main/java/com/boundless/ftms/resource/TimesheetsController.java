@@ -63,7 +63,7 @@ public class TimesheetsController {
     }
 
     @RequestMapping(path = "/get/{jobId}", method = RequestMethod.GET)
-    public List<Timesheets> findTimesheetsFromJob(@PathVariable("jobId") int jobId) {
+    public List<Timesheets> findTimesheetsWithJobId(@PathVariable("jobId") int jobId) {
         return timesheetsRepository.findTimesheetsFromJob(jobId);
     }
 
