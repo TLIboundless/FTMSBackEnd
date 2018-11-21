@@ -40,9 +40,7 @@ public class TaskController {
                                       @RequestParam String start,
                                       @RequestParam String end) {
         Task task = taskRepository.getOne(Integer.parseInt(id));
-        if (!name.equals("")) {
-            task.setName(name);
-        }
+        task.setName(name);
         if (!start.equals("")) {
             task.setStartTime(Timestamp.valueOf(start));
         }
