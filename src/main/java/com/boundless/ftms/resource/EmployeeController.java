@@ -20,8 +20,8 @@ public class EmployeesController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String saveToDatabase(@RequestBody Employee employees) {
-        employeesRepository.save(employees);
+    public String saveToDatabase(@RequestBody Employee employee) {
+        employeesRepository.save(employee);
         return "employees updated";
     }
 
