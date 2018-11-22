@@ -10,10 +10,6 @@ public interface TimesheetsRepository extends JpaRepository<Timesheets, Integer>
     // SQL queries
     public static final String FIND_TIMSHEETS_FROM_JOB = "SELECT * FROM timesheets WHERE job_id = ?1";
 
-
     @Query(value = FIND_TIMSHEETS_FROM_JOB, nativeQuery = true)
     public List<Timesheets> findTimesheetsFromJob(int job_id);
-
-
-
 }
