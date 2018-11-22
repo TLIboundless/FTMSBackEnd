@@ -1,12 +1,11 @@
 package com.boundless.ftms.repository;
-import com.boundless.ftms.model.Jobs;
-import com.boundless.ftms.model.Timesheets;
+import com.boundless.ftms.model.Job;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface JobsRepository extends JpaRepository<Jobs, Integer>{
+public interface JobsRepository extends JpaRepository<Job, Integer>{
 
     // SQL queries
     String FIND_JOBS_FROM_WORKER = "SELECT * FROM jobs WHERE worker_id = ?1";
@@ -17,12 +16,12 @@ public interface JobsRepository extends JpaRepository<Jobs, Integer>{
 
 
     @Query(value = FIND_JOBS_FROM_WORKER, nativeQuery = true)
-    public List<Jobs> findJobsFromWorker(int worker_id);
+    public List<Job> findJobsFromWorker(int worker_id);
 
     @Query(value = FIND_JOBS_FROM_JOB_ID, nativeQuery = true)
-    public List<Jobs> findJobsFromJobId(int job_id);
+    public List<Job> findJobsFromJobId(int job_id);
 
     @Query(value = FIND_JOBS_FROM_WORKORDER_ID, nativeQuery = true)
-    public List<Jobs> findJobsFromWorkOrderId(int workorder_id);
+    public List<Job> findJobsFromWorkOrderId(int workorder_id);
 
 }

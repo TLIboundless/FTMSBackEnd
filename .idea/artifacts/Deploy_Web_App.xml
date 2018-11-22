@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Deploy Web App">
+    <output-path>$PROJECT_DIR$//Deploy_Web_App</output-path>
+    <root id="root" />
+  </artifact>
+</component>

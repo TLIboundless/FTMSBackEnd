@@ -3,7 +3,8 @@ package com.boundless.ftms.model;
 import javax.persistence.*;
 
 @Entity
-public class Clients {
+@Table(name="clients")
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,9 +17,9 @@ public class Clients {
     @Column(name = "email")
     private String email;
 
-    public Clients() {}
+    public Client() {}
 
-    public Clients(int clients_id, String name, String email) {
+    public Client(int clients_id, String name, String email) {
         this.clients_id = clients_id;
         this.name = name;
         this.email = email;

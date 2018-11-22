@@ -5,7 +5,8 @@ import javax.persistence.*;
 import java.sql.*;
 
 @Entity
-public class Timesheets {
+@Table(name="timesheets")
+public class Timesheet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,11 +34,11 @@ public class Timesheets {
     @Column(name = "time_approved")
     private Timestamp time_approved = null;
 
-    public Timesheets() {
+    public Timesheet() {
     }
 
-    public Timesheets(int timesheet_id, int job_id, Timestamp time_submitted, String approval_status, String rejection_reason,
-                      Timestamp time_approved) {
+    public Timesheet(int timesheet_id, int job_id, Timestamp time_submitted, String approval_status, String rejection_reason,
+                     Timestamp time_approved) {
         this.timesheet_id = timesheet_id;
         this.job_id = job_id;
         this.time_submitted = time_submitted;

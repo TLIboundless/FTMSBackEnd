@@ -5,7 +5,7 @@ import java.sql.*;
 
 @Entity
 @Table(name = "parts")
-public class Parts {
+public class Part {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,9 +25,9 @@ public class Parts {
     private int job_id;
 
 
-    public Parts() { }
+    public Part() { }
 
-    public Parts(int part_id, String name, double unit_price, int quantity, int job_id) {
+    public Part(int part_id, String name, double unit_price, int quantity, int job_id) {
         this.job_id = job_id;
         this.quantity = quantity;
         this.unit_price = unit_price;

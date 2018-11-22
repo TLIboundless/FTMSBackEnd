@@ -1,13 +1,11 @@
 package com.boundless.ftms.repository;
-import com.boundless.ftms.model.Timesheets;
-import com.boundless.ftms.model.WorkOrders;
-import org.hibernate.jdbc.Work;
+import com.boundless.ftms.model.WorkOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface WorkOrdersRepository extends JpaRepository<WorkOrders, Integer>{
+public interface WorkOrdersRepository extends JpaRepository<WorkOrder, Integer>{
 
     // SQL queries
     public static final String FIND_ORDERS_FROM_CLIENT = "SELECT * FROM work_orders WHERE client_id = ?1";
@@ -15,8 +13,8 @@ public interface WorkOrdersRepository extends JpaRepository<WorkOrders, Integer>
 
 
     @Query(value = FIND_ORDERS_FROM_CLIENT, nativeQuery = true)
-    public List<WorkOrders> findWorkOrdersFromClient(int client_id);
+    public List<WorkOrder> findWorkOrdersFromClient(int client_id);
 
     @Query(value = FIND_ORDERS_FROM_WORKORDER, nativeQuery = true)
-    public List<WorkOrders> findWorkOrdersFromWorkOrderId(int workOrder_id);
+    public List<WorkOrder> findWorkOrdersFromWorkOrderId(int workOrder_id);
 }
