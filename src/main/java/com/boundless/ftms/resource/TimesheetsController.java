@@ -81,4 +81,9 @@ public class TimesheetsController {
         return timesheets;
     }
 
+    @RequestMapping(path = "/get_worker_from_timesheet_id", method = RequestMethod.GET)
+    public Integer getWorkerId(@RequestParam("timesheet_id") int timesheet_id) {
+        return timesheetRepository.get_worker_id(timesheet_id).get(0);
+    }
+
 }
