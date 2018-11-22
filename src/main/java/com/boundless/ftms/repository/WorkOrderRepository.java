@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface WorkOrdersRepository extends JpaRepository<WorkOrder, Integer>{
+public interface WorkOrderRepository extends JpaRepository<WorkOrder, Integer>{
 
     // SQL queries
     public static final String FIND_ORDERS_FROM_CLIENT = "SELECT * FROM work_orders WHERE client_id = ?1";

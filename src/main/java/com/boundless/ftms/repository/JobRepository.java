@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface JobsRepository extends JpaRepository<Job, Integer>{
+public interface JobRepository extends JpaRepository<Job, Integer>{
 
     // SQL queries
     String FIND_JOBS_FROM_WORKER = "SELECT * FROM jobs WHERE worker_id = ?1";

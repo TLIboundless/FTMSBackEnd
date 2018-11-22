@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface PartsRepository extends JpaRepository<Part, Integer> {
+public interface PartRepository extends JpaRepository<Part, Integer> {
     // SQL queries
     public static final String FIND_PARTS_FROM_JOB = "SELECT * FROM parts WHERE job_id = ?1";
 

@@ -3,7 +3,7 @@ package com.boundless.ftms.resource;
 import java.util.List;
 
 import com.boundless.ftms.model.Client;
-import com.boundless.ftms.repository.ClientsRepository;
+import com.boundless.ftms.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.*;
 public class ClientController {
 
     @Autowired
-    ClientsRepository clientsRepository;
+    ClientRepository clientRepository;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     private List<Client> getAll() {
-        return clientsRepository.findAll();
+        return clientRepository.findAll();
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String saveToDatabase(@RequestBody final Client client){
-        clientsRepository.save(client);
+        clientRepository.save(client);
         return "client added!";
     }
 

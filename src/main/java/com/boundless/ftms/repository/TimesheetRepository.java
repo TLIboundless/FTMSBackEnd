@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.*;
 import java.util.*;
 
 
-public interface TimesheetsRepository extends JpaRepository<Timesheet, Integer>{
+public interface TimesheetRepository extends JpaRepository<Timesheet, Integer>{
 
     // SQL queries
     public static final String FIND_TIMSHEETS_FROM_JOB = "SELECT * FROM timesheets WHERE job_id = ?1";

@@ -3,7 +3,7 @@ package com.boundless.ftms.resource;
 import java.util.List;
 
 import com.boundless.ftms.model.Job;
-import com.boundless.ftms.repository.JobsRepository;
+import com.boundless.ftms.repository.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,32 +12,32 @@ import org.springframework.web.bind.annotation.*;
 public class JobController {
 
     @Autowired
-    JobsRepository jobsRepository;
+    JobRepository jobRepository;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     private List<Job> getAll() {
-        return jobsRepository.findAll();
+        return jobRepository.findAll();
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String saveToDatabase(@RequestBody final Job job){
-        jobsRepository.save(job);
+        jobRepository.save(job);
         return "job added!";
     }
 
     @RequestMapping(value = "/get_from_workers_id/{workerId}", method = RequestMethod.GET)
     public List<Job> getJobFromWorkerId(@PathVariable("workerId") int workerId) {
-        return jobsRepository.findJobsFromWorker(workerId);
+        return jobRepository.findJobsFromWorker(workerId);
     }
 
     @RequestMapping(value = "get_from_jobs_id/{jobId}", method = RequestMethod.GET)
     public List<Job> getJobFromJobId(@PathVariable("jobId") int jobId){
-        return jobsRepository.findJobsFromJobId(jobId);
+        return jobRepository.findJobsFromJobId(jobId);
     }
 
     @RequestMapping(value = "/get_from_work_order_id/{id}", method = RequestMethod.GET)
     public List<Job> getJobsFromWorkOrderId(@PathVariable("id") int id) {
-        return jobsRepository.findJobsFromWorkOrderId(id);
+        return jobRepository.findJobsFromWorkOrderId(id);
     }
 
 }
