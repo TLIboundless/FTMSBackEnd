@@ -3,6 +3,7 @@ package com.boundless.ftms.resource;
 import java.util.List;
 
 import com.boundless.ftms.model.Jobs;
+import com.boundless.ftms.model.WorkOrders;
 import com.boundless.ftms.repository.JobsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -33,6 +34,11 @@ public class JobsController {
 
     @RequestMapping(value = "get_from_jobs_id/{jobId}", method = RequestMethod.GET)
     public List<Jobs> getJobFromJobId(@PathVariable("jobId") int jobId){
-        return jobsRepository.findJobsFromJobId(jobId);
+        return jobsRepository.findJobsFromJobId(Integer.parseInt(jobId));
+    }
+
+    @RequestMapping(value = "/get_from work_order_id/{id}", method = RequestMethod.GET)
+    public List<Jobs> getJobsFromWorkOrderId(@PathVariable("id") int id) {
+        return jobsRepository.findJobsFromWorkOrderId(id);
     }
 }
