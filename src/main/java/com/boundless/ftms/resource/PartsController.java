@@ -23,8 +23,8 @@ public class PartsController {
         return "parts added!";
     }
 
-    @RequestMapping(value = "/get_parts_from_job_id", method = RequestMethod.GET)
-    public List<Parts> getPartsFromJobId(@RequestBody int job_id) {
+    @RequestMapping(value = "/get_parts_from_job_id/{job_id}", method = RequestMethod.GET)
+    public List<Parts> getPartsFromJobId(@PathVariable("job_id") int job_id) {
         return partsRepository.findPartsFromJobId(job_id);
     }
 }
