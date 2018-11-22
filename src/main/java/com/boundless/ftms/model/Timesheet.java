@@ -16,6 +16,9 @@ public class Timesheet {
     @Column(name = "job_id")
     private int job_id;
 
+    @Column(name = "worker_id")
+    private int worker_id;
+
     @Column(name = "start_time")
     private Timestamp start_time;
 
@@ -108,4 +111,13 @@ public class Timesheet {
     public void setTimeApproved(Timestamp time_approved) {
         this.time_approved = time_approved;
     }
+
+    public int getWorker_id() {
+        return worker_id;
+    }
+
+    public void setWorker_id(int worker_id) {
+        this.worker_id = worker_id;
+    }
+
 }
