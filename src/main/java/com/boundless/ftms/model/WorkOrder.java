@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-public class WorkOrders {
+public class WorkOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,10 +29,10 @@ public class WorkOrders {
     @Column(name = "description")
     private String description;
 
-    public WorkOrders() {}
+    public WorkOrder() {}
 
-    public WorkOrders(int client_id, Timestamp deadline, boolean completed, String location, String skills,
-                      String description) {
+    public WorkOrder(int client_id, Timestamp deadline, boolean completed, String location, String skills,
+                     String description) {
         this.client_id = client_id;
         this.deadline = deadline;
         this.completed = completed;
