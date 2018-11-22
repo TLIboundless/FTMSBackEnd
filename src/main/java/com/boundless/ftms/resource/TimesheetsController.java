@@ -6,7 +6,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.boundless.ftms.model.Jobs;
 import com.boundless.ftms.model.Timesheets;
+import com.boundless.ftms.repository.JobsRepository;
 import com.boundless.ftms.repository.TimesheetsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -20,6 +22,8 @@ public class TimesheetsController {
 
     @Autowired
     TimesheetsRepository timesheetsRepository;
+    @Autowired
+    JobsRepository jobsRepository;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     private List<Timesheets> getAll() {
@@ -64,6 +68,21 @@ public class TimesheetsController {
     @RequestMapping(path = "/get_from_jobs_id/{jobId}", method = RequestMethod.GET)
     public List<Timesheets> findTimesheetsWithJobId(@PathVariable("jobId") int jobId) {
         return timesheetsRepository.findTimesheetsFromJob(jobId);
+    }
+
+    @RequestMapping(path = "/get_pending_timesheets_from_work_order_id/{workOrderId}", method = RequestMethod.GET)
+    public List<Timesheets> findPendingTimesheetsWithWorkerId(@PathVariable("workOrderId") int workOrderId){
+        List<Jobs> jobs = jobsRepository.findJobsFromWorkOrderId(workOrderId);
+        List<Timesheets> timesheets = new ArrayList<>();
+        for (int i = 0; i < jobs.size(); i++) {
+            Jobs currJob = jobs.get(i);
+            int currId = currJob.getJobID();
+            List<Timesheets> temp_ts = timesheetsRepository.findPendingTimeSheetsFromJobId(currId);
+            for (int j = 0; j < temp_ts.size(); j ++) {
+                timesheets.add(temp_ts.get(j));
+            }
+        }
+        return timesheets;
     }
 
 }

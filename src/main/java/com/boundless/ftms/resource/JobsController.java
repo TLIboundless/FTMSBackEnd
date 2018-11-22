@@ -44,19 +44,4 @@ public class JobsController {
         return jobsRepository.findJobsFromWorkOrderId(id);
     }
 
-    @RequestMapping(path = "/get_pending_timesheets_from_work_order_id/{workOrderId}", method = RequestMethod.GET)
-    public List<Timesheets> findPendingTimesheetsWithWorkerId(@PathVariable("workOrderId") int workOrderId){
-        List<Jobs> jobs = jobsRepository.findJobsFromWorkOrderId(workOrderId);
-        List<Timesheets> timesheets = new ArrayList<>();
-        for (int i = 0; i < jobs.size(); i++) {
-            Jobs currJob = jobs.get(i);
-            int currId = currJob.getJobID();
-            List<Timesheets> temp_ts = jobsRepository.findPendingTimeSheetsFromJobId(currId);
-            for (int j = 0; j < temp_ts.size(); j ++) {
-                timesheets.add(temp_ts.get(j));
-            }
-        }
-        return timesheets;
-    }
-
 }
