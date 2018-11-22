@@ -34,7 +34,7 @@ public class JobsController {
 
     @RequestMapping(value = "get_from_jobs_id/{jobId}", method = RequestMethod.GET)
     public List<Jobs> getJobFromJobId(@PathVariable("jobId") int jobId){
-        return jobsRepository.findJobsFromJobId(Integer.parseInt(jobId));
+        return jobsRepository.findJobsFromJobId(jobId);
     }
 
     @RequestMapping(value = "/get_from_work_order_id/{id}", method = RequestMethod.GET)
