@@ -66,9 +66,4 @@ public class TimesheetsController {
         return timesheetsRepository.findTimesheetsFromJob(jobId);
     }
 
-//    @RequestMapping(path = "/get_pending_timesheets_from_work_order_id/{workOrderId}", method = RequestMethod.GET)
-//    public List<Timesheets> findPendingTimesheetsWithWorkerId(@PathVariable("workOrderId") int workOrderId){
-//
-//    }
-
 }
