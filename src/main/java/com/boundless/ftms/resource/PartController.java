@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/parts")
-public class PartsController {
+public class PartController {
 
     @Autowired
     PartsRepository partsRepository;
